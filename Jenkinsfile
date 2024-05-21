@@ -31,7 +31,7 @@ pipeline {
         stage('Terraform Apply') {
             steps {
                 script {
-                    sh 'terraform destroy -auto-appove=yes'
+                    sh 'terraform destroy --auto-appove'
                 }
             }
         }
