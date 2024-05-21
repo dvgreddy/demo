@@ -15,7 +15,7 @@ pipeline {
         stage('Terraform Init') {
             steps {
                 script {
-                    sh 'terraform init -upgrade'
+                    sh 'terraform init'
                 }
             }
         }
@@ -27,13 +27,7 @@ pipeline {
                 }
             }
         }
-
-	    stage('Manual Approval') {
-            steps {
-                input "Approve?"
-            }
-        }
-	    
+           
         stage('Terraform Apply') {
             steps {
                 script {
